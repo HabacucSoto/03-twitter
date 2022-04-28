@@ -21,4 +21,13 @@ describe( 'Suite test for class UserView', () => {
 
     } )
 
+    test( '3) Return an error object when try to create a new user with a payload with missing props', () => {
+
+        const payload = { username: 'thisisausername' }
+        const result = UserView.createUser( payload )
+
+        expect( result.error ).toMatch(/tienen que estar todas las props/)
+
+    } )
+
 } )

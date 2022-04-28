@@ -7,11 +7,12 @@ class UserView {
             return { error: 'payload no existe' }
         }else if( payload.id === null || payload.username === null || payload.name === null ){
             return { error: 'necesitan tener un valor válido'}
-        }else {
+        }else if( payload.id && payload.username && payload.name ){
             return new UserService( payload )
+        }else {
+            return { error: 'tienen que estar todas las props' }
         }
     }
-
+    
 }
-
 module.exports = UserView
