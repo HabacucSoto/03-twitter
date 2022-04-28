@@ -10,6 +10,10 @@ class UserService {
         return [ id, username, name, bio ]
     }
 
+    static updateUsername( user, newUsername ){
+        return user.username = newUsername
+    }
+
 }
 
 module.exports = UserService
