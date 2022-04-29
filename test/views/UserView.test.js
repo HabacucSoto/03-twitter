@@ -30,4 +30,15 @@ describe( 'Suite test for class UserView', () => {
 
     } )
 
+    test( '4) Create a user by a given valid payload', () => {
+
+        const payload = { id: 1, username: 'username', name: 'name' }
+        const result = UserView.createUser( payload )
+
+        expect( result.id ).toBe( 1 )
+        expect( result.username ).toBe( 'username' )
+        expect( result.name ).toBe( 'name' )
+
+    } )
+
 } )
